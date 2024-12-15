@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог дверей</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Каталог дверей</h1>
+    </header>
+    <nav>
+    <a href="/">Главная</a>
+    <a href="/doors">Двери</a>
+    <a href="/contact">Контакты</a>
+</nav>
+    <div class="container">
+        <h2>Наши двери</h2>
+        <ul>
+            {% for door in door_list %}
+            <li>{{ door }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <footer>
+        <p>&copy; 2024 Сайт о дверях</p>
+    </footer>
+</body>
+</html>

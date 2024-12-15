@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<header>
+    <h1>Свяжитесь с нами</h1>
+</header>
+<nav>
+    <a href="/">Главная</a>
+    <a href="/doors">Двери</a>
+    <a href="/contact">Контакты</a>
+</nav>
+<div class="container">
+    <h2>Контакты</h2>
+    {% if message_sent %}
+        <p>Спасибо за ваше сообщение, {{ name }}! Мы свяжемся с вами в ближайшее время.</p>
+    {% else %}
+        <form action="/contact" method="POST">
+            <label for="name">Ваше имя:</label>
+            <input type="text" id="name" name="name" required><br>
+            <label for="message">Сообщение:</label>
+            <textarea id="message" name="message" required></textarea><br>
+            <button type="submit">Отправить</button>
+        </form>
+    {% endif %}
+</div>
+<footer>
+    <p>&copy; 2024 Сайт о дверях</p>
+</footer>
+</body>
+</html>
